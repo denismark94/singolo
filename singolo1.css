@@ -1,0 +1,207 @@
+body {
+  margin: auto;
+  width: 1020px;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: Lato;
+  background-color: #2D303A;
+  height: 89px;
+}
+
+.logo {
+  margin-left: 40px;
+  margin-top: 28px;
+  font-size: 26px;
+  font-family: "Lato";
+  color: white;
+  font-weight: 300;
+  letter-spacing: -1.2px;
+}
+
+ul {
+  margin-top: 42px;
+  margin-left: 59px;
+  font-size: 12px;
+  list-style-type: none;
+  color: white;
+  font-weight: 300;
+  letter-spacing: -0.3px;
+}
+li:hover {
+  color: #F06C64;
+  cursor: pointer;
+}
+li {
+  float: left;
+  width: fit-content;
+  margin: auto;
+}
+li:not(:first-child):before {
+  content: " · ";
+  color: white;
+  opacity: 0.15;
+  padding-left: 14.1px;
+  padding-right: 11.5px;
+  
+}
+
+.header_line {
+  height: 6px;
+  background-color: #323746;
+}
+.slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 594px;
+  background-color: #F06C64;
+}
+.left_chev {
+  margin-top: 281px;
+  margin-left: 42px;
+  transform: scale(-1, 1);
+}
+.left_chev:hover {
+  cursor: pointer;
+
+  color: black;
+}
+
+.left_chev:active {
+  box-shadow: black;
+}
+.v_iphone {
+  position: absolute;
+  margin-top: 53px;
+  margin-left: 112px; 
+}
+.h_iphone {
+  position: absolute;
+  margin-top: 174px;
+  margin-left: 425px;
+  
+}
+.iphone_src {
+  position: absolute;
+  z-index: 2;
+  }
+.shadow {
+  position: absolute;
+  opacity: 0.14901960784313725;
+  z-index: 1;
+}
+.right_chev {
+  margin-top: 281px;
+  margin-left: 455px;
+}
+.slider_line{
+  height: 6px;
+  background-color: #EA676B;
+}
+
+
+footer {
+  padding-left: 41px;
+  height: 491px;
+  font-family: Lato;
+  color: #666D89;
+  display: grid;
+  grid-template: 188px 125px / repeat(3, 300px);
+  column-gap: 20px;
+  background-color: #f2f2f2;
+}
+.common {
+  width: 945px;
+  height: 40px;
+  margin-top: 32px;
+  font-size: 20px;
+  grid-column: 1 / 4;
+}
+
+.common h2 {
+  margin-top: 27px;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.007em;
+
+}
+.common p {
+  margin-top: -7px;
+  font-size: 18px;
+  font-family: "Custom";
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0.003em;
+  word-spacing: 0em;
+}
+.service {
+  grid-template: 17px 54px / 60px 220px;
+  gap: 15px;
+  display: grid;
+  width: 300px;
+  height: 87px;
+}
+
+.service img {
+  grid-row: 2 / 2;
+  grid-column: 1 / 1;
+}
+.service h2 {
+  margin-top: 29px;
+  margin-left: 5px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  font-size: 18px;
+  grid-row: 1 / 1;
+  grid-column: 2 / 2;
+}
+.service p {
+  margin-top: 28px;
+  margin-left: 5px;
+  grid-row: 2 / 2;
+  grid-column: 2 / 2;
+  font-size: 11px;
+  text-align: justify;
+  line-height: 2;
+  overflow-wrap: break-word;
+}
+.footer_line {
+  height: 6px;
+  background-color: #FFFFFF;
+}
+
+@font-face {
+  font-family: 'Custom';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
