@@ -1,0 +1,131 @@
+body {
+  width: 1020px;
+  margin: auto;
+  font-family: "Lato", sans-serif;
+}
+
+.portfolio {
+  padding-top: 60px;
+  padding-left: 40px;
+  background-color: #2d303a;
+  height: 804px;
+}
+
+.portfolio > h2 {
+  margin: 0;
+  font-size: 1.9em;
+  font-weight: 700;
+  color: #666d89;
+}
+
+.portfolio > p {
+  margin-top: 22px;
+  font-weight: 400;
+  font-size: 1.1em;
+  letter-spacing: -0.003em;
+  color: #767e9e;
+  margin-bottom: 15px;
+}
+
+.portfolio > nav {
+  color: #767e9e;
+  margin-left: 1px;
+  margin-bottom: 23px;
+}
+
+.portfolio > nav > a {
+  padding: 3.2px 6.2px;
+  margin-right: 7px;
+  border-style: solid;
+  letter-spacing: 0.026em;
+  font-size: 0.7em;
+  font-weight: 600;
+  border-radius: 0.4em;
+}
+
+.arts {
+  display: grid;
+  gap: 20px;
+  grid-template: repeat(3, 187px) / repeat(4, 220px);
+}
+
+.line-1 {
+  height: 6px;
+  background-color: #323746;
+}
+
+footer {
+  background-color: #f2f2f2;
+  height: 728px;
+  padding-left: 40px;
+  display: grid;
+  gap: 20px;
+  grid-template: 198px 400px  / repeat(3, 300px);
+}
+
+.general {
+  grid-column: 1 / 4;
+}
+
+.author h3 {
+  margin-top: 11px;
+  margin-left: -1px;
+  font-weight: 900;
+  letter-spacing: -0.9px;
+  font-size: 1.2em;
+}
+
+.general h2 {
+  margin: 0;
+  font-size: 1.9em;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  margin-top: 59px;
+}
+
+.general p {
+  width: 939px;
+  margin-top: 18px;
+  font-size: 1.1em;
+  line-height: 1.8em;
+  font-stretch: extra-condensed;
+  text-align: justify;
+  font-weight: 400;
+}
+
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Lato Black"), local("Lato-Black"), url("https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPGQ.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Lato Bold"), local("Lato-Bold"), url("https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPGQ.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Lato Regular"), local("Lato-Regular"), url("https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXg.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Lato Light"), local("Lato-Light"), url("https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwiPGQ.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
