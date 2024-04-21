@@ -19,12 +19,12 @@ body {
 }
 
 .portfolio > p {
-  margin-top: 22px;
+  margin-top: 23px;
   font-weight: 400;
   font-size: 1.1em;
   letter-spacing: -0.003em;
   color: #767e9e;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
 .portfolio > nav {
@@ -34,19 +34,33 @@ body {
 }
 
 .portfolio > nav > a {
-  padding: 3.2px 6.2px;
+  display: inline-block;
+  padding: 3.5px 6px;
   margin-right: 7px;
   border-style: solid;
-  letter-spacing: 0.026em;
+  letter-spacing: 0.02em;
   font-size: 0.7em;
   font-weight: 600;
   border-radius: 0.4em;
+  border-width: 1px;
+}
+
+.portfolio > nav > a:hover {
+  color: #E8D4A5;
+  cursor: pointer
+}
+
+.clickable:active {
+  transform: scale(1.1, 1.1);
 }
 
 .arts {
   display: grid;
   gap: 20px;
   grid-template: repeat(3, 187px) / repeat(4, 220px);
+  grid-auto-flow: dense;
+  grid-auto-rows: 0;
+  overflow: hidden;
 }
 
 .line-1 {
@@ -57,75 +71,109 @@ body {
 footer {
   background-color: #f2f2f2;
   height: 728px;
-  padding-left: 40px;
-  display: grid;
-  gap: 20px;
+  padding: 1px 30px 0 30px;
+  /* padding-left: 40px; */
+  
   grid-template: 198px 400px  / repeat(3, 300px);
 }
 
 .general {
-  grid-column: 1 / 4;
-}
+  margin: -1px 10px 0 10px;
+  color: #666d89;
 
-.author h3 {
-  margin-top: 11px;
-  margin-left: -1px;
-  font-weight: 900;
-  letter-spacing: -0.9px;
-  font-size: 1.2em;
 }
 
 .general h2 {
   margin: 0;
   font-size: 1.9em;
   font-weight: 900;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.4px;
   margin-top: 59px;
 }
 
 .general p {
-  width: 939px;
-  margin-top: 18px;
+  /* width: 939px; */
+  margin-top: 19px;
   font-size: 1.1em;
-  line-height: 1.8em;
+  line-height: 1.7em;
+  letter-spacing: -0.06px;
   font-stretch: extra-condensed;
   text-align: justify;
   font-weight: 400;
 }
 
-
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: local("Lato Black"), local("Lato-Black"), url("https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPGQ.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+.authors {
+  margin: 44px 10px 0 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: space-between;
 }
 
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Lato Bold"), local("Lato-Bold"), url("https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPGQ.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+.author h3 {
+  margin-top: 12px;
+  margin-left: -1px;
+  margin-bottom: 7px;
+  font-weight: 800;
+  letter-spacing: -0.45px;
 }
 
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Lato Regular"), local("Lato-Regular"), url("https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXg.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+.author p {
+  margin:0;
+  font-stretch: extra-condensed;
+  /* margin-top: -2px; */
+  font-size: 0.75em;
+  font-weight: 600;
+  /* word-spacing: -0.6px; */
+  margin-left: -0.5px;
+  letter-spacing: -0.1px;
+  line-height: 21px;
 }
 
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local("Lato Light"), local("Lato-Light"), url("https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwiPGQ.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+.firstline {
+  word-spacing: 0.7px;
+}
+
+.secondline{
+  word-spacing: -0.1px;
+}
+
+#desmond {
+  margin-left: -1px;
+}
+
+#line1 {
+  word-spacing: -0.6px;
+}
+
+#line3 {
+  word-spacing: 0.9px;
+}
+
+#left_social {
+  margin-left: 1px;
+}
+
+.social {
+  margin-top: 25px;
+  
+  display: grid;
+  grid-template-columns: repeat(4,32px);
+  gap: 8px;
+  justify-content: left;
+}
+
+
+.icon:hover {
+  filter: drop-shadow(2px 2px 1px #666d89);
+  cursor: pointer;
+}
+
+
+
+.icon {
+  border: #666d89 solid;
+  border-width: 1.5px;
+  border-radius: 100%;
+  padding:1px;
 }
