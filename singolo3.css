@@ -5,7 +5,7 @@ body {
     color: #f0d8d9;
 }
 main {
-    height: 648px;
+    height: 568px;
     padding: 40px;
 
     background-color: #f06c64;
@@ -23,7 +23,7 @@ main {
 }
 
 .info > h1 {
-    margin-top: 20px;
+    margin-top: 19px;
     margin-bottom: 0;
     font-size: 30px;
 }
@@ -31,7 +31,7 @@ main {
 .info > p {
     font-size: 18px;
     font-weight: 300;
-    line-height: 30.5px;
+    line-height: 30px;
     text-align: justify;
 }
 
@@ -40,8 +40,17 @@ main {
     grid-area: B;
     display: grid;
     grid-auto-rows: min-content;
-    padding-top:17px;
+    padding-top:18px;
 }
+
+.quote_form > .input{
+    font-size: 12px;
+    font-family: "Lato";
+    font-weight: 400;
+    padding-left: 15px;
+}
+
+
 
 .quote_form > input {
     height:38px;
@@ -50,26 +59,32 @@ main {
     border-radius: 5px;
     border-style: none;
     background-color: #d6564f;
+
 }
 
+.input::placeholder {
+    color: #f48c8f;
+  }
+
 .quote_form > textarea {
-    height: 202px;
+    height: 192px;
     margin-top: 8px;
     padding: 0;
     border-radius: 5px;
     border-style: none;
     background-color: #d6564f;
+    padding-top: 10px;
 }
 
 .contacts {
     width: 302px;
     grid-area: C;
     padding-left: 20.5px;
-    padding-top: 22px;
+    padding-top: 23px;
 }
 
 .contacts > h2 {
-    font-size: 13.6pt;
+    font-size: 18px;
     margin:0 0 0 0.6px;
 }
 
@@ -78,11 +93,9 @@ main {
     margin-top: 8.5px;
     font-size: 12px;
     text-align: justify;
-    line-height: 21.3px;
+    line-height: 21.56px;
     hyphens: auto;
 }
-
-
 
 #location {
     list-style-image: url(assets/location.svg);
@@ -98,15 +111,11 @@ main {
     background-color: #ea676b;
 }
 
-footer {
-    height: 76px;
-    background-color: #2d303a;
-}
 
 .contacts_block {
     margin-top: 22px; 
     margin-left: 1.3px; 
-    row-gap: 4px;
+    row-gap: 3px;
     display:grid;     
     align-items: center;
 }
@@ -117,6 +126,7 @@ footer {
     justify-content: start;
     column-gap: 10px;
     align-items: center;
+    align-content: center;
 }
 
 .contacts_str > a {
@@ -124,3 +134,46 @@ footer {
     color: #f0d8d9;
     font-size: 9pt;
 }
+
+#email_icon {
+    margin-top: 5px;
+}
+
+footer {
+    height: 77px;
+    background-color: #2d303a;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 43px;
+}
+
+footer > p {
+    color: #666d89;
+    font-size: 12px;
+    font-family: Lato;
+    font-weight: 400;
+    margin:0;
+}
+
+.social {
+    display: grid;
+    grid-template-columns: repeat(4,31px);
+    gap: 8px;
+    justify-content: left;
+  }
+
+.icon:hover {
+    filter: drop-shadow(2px 2px 1px #666d89);
+    cursor: pointer;
+  }
+  
+  
+  
+  .social>.icon {
+    border: #666d89 solid;
+    border-width: 1.5px;
+    border-radius: 100%;
+    padding:1px;
+  }
