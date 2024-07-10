@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <svg fill="#666d89" width="28px" height="28px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 -90 250 450" xml:space="preserve">
+	 <style type="text/css">svg:hover{cursor:pointer;}</style>
 <g>
 	<path d="M181.378,212.558c-0.684-19.135-11.532-36.66-29.771-48.106c-10.903-9.19-15.144-18.81-15.144-28.704
 		c0-5.99,5.108-13.917,5.108-13.917c11.434-17.76,14.941-41.01,9.625-63.833c-2.624-11.265-7.141-21.333-13.45-29.998h8.162

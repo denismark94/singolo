@@ -53,17 +53,36 @@ main {
 
 
 .quote_form > input {
+    font-size: 12px;
+    font-family: "Lato";
+    font-weight: 400;
+    padding-left: 15px;
     height:38px;
     margin:8px 0;
     padding:0;
     border-radius: 5px;
     border-style: none;
     background-color: #d6564f;
+    color: #f48c8f;
 
 }
 
 .input::placeholder {
     color: #f48c8f;
+  }
+
+.input:focus {
+    background-color: #c44740;
+    outline: none;
+}
+
+  #submit:hover {
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 5px #666d89);
+  }
+
+  #submit:active {
+    transform: scale(1.01, 1.01);
   }
 
 .quote_form > textarea {
@@ -164,14 +183,16 @@ footer > p {
     justify-content: left;
   }
 
-.icon:hover {
-    filter: drop-shadow(2px 2px 1px #666d89);
+.icon:hover #document{
     cursor: pointer;
+}
+footer .clickable:hover{
+    filter: drop-shadow(2px 2px 1px #666d89);
   }
   
   
   
-  .social>.icon {
+.social>.icon {
     border: #666d89 solid;
     border-width: 1.5px;
     border-radius: 100%;
