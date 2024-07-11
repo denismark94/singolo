@@ -101,6 +101,10 @@ header > .menu > nav > ul > li > a:hover {
     color: #f06c64;
 }
 
+header > .menu > nav > ul > li > .active {
+  color: #f06c64;
+}
+
 header > .line {
     background-color: #323746;   
 }
