@@ -1,7 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     width: 1020px;
     margin: auto;
     font-family: "Lato", sans-serif;
+
 }
 
 .hoverable:hover {
@@ -17,22 +22,32 @@ body {
 }
 
 header {
-    display: grid;
+  position: sticky;
+  top: 0;
+  width:inherit;
+  z-index: 10;
+}
+.menu {
+  display: grid;
     height: 85px;
     grid-template-columns: auto auto;
     justify-content: space-between;
 
     background-color: #2d303a;
     align-items: center;
-    padding-left: 4%;
+    /* padding-left: 4%; */
     padding-bottom: 4px;
-    padding-right: 4%;  
-}  
+    /* padding-right: 4%;   */
+    z-index: 100;
+} 
 
-header > .logo {
-    /* margin-left: 40px;
-    margin-top: 28px; */
-    margin: 0;
+
+
+header > .menu > .logo {
+  margin: 0;
+    margin-left: 40px;
+    /*margin-top: 28px; */
+
     font-size: 19pt;
     font-weight: 400;
     letter-spacing: -0.7px;
@@ -42,11 +57,14 @@ header > .logo {
   }
   
   
-header > .logo:hover {
+header > .menu > .logo:hover {
     text-shadow: 0 0 2px white;
 }
+header > .menu > nav {
+  margin-right: 40px;
+}
 
-header > nav > ul {
+header > .menu > nav > ul {
     margin: 0;
     margin-top: 12px;
     padding: 0;
@@ -55,15 +73,23 @@ header > nav > ul {
     letter-spacing: -0.3px;
     color: white;
     list-style-type: none;
+
  }
 
-header > nav > ul > li {
+header > .menu > nav > ul > li {
     float: left;
     width: fit-content;
     margin: auto;
+
 }
 
-header > nav > ul > li:not(:first-child)::before {
+header > .menu > nav > ul > li > a {
+  text-decoration: none;
+  color: white;
+
+}
+
+header > .menu > nav > ul > li:not(:first-child)::before {
     padding-left: 14.1px;
     padding-right: 12px;
     color: white;
@@ -71,13 +97,18 @@ header > nav > ul > li:not(:first-child)::before {
     content: " · ";
 }
 
-header > nav > ul > li:hover {
+header > .menu > nav > ul > li > a:hover {
     color: #f06c64;
 }
 
-header + .line {
-    background-color: #323746;
+header > .line {
+    background-color: #323746;   
 }
+
+main > div {
+  scroll-margin-top: 95px;
+}
+
 
 main > .slider {
     height: 594px;

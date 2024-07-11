@@ -12,20 +12,23 @@
     </head>
     <body>
         <header>
+          <div class="menu">
             <h1 class="logo hoverable clickable">SINGOLO<span style="color: #f06c64;">*</span></h1>
             <nav>
                 <ul>
-                    <li class="hoverable clickable">HOME</li>
-                    <li class="hoverable clickable">SERVICES</li>
-                    <li class="hoverable clickable">PORTFOLIO</li>
-                    <li class="hoverable clickable">ABOUT</li>
-                    <li class="hoverable clickable">CONTACT</li>
+                    <li class="hoverable clickable"><a href="#slider">HOME</a></li>
+                    <li class="hoverable clickable"><a href="#services">SERVICES</a></li>
+                    <li class="hoverable clickable"><a href="#portfolio">PORTFOLIO</a></li>
+                    <li class="hoverable clickable"><a href="#about">ABOUT</a></li>
+                    <li class="hoverable clickable"><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
+          </div>
+            <div class="line" ></div>
         </header>
-        <div class="line"></div>
+
         <main>
-            <div class="slider ">
+            <div class="slider" id="slider">
                 <img class="left-chev hoverable " src="./assets/slider/chev.png" alt="Left">
                 <div class="v-iphone iphone hoverable ">
                     <img class="iphone-src" src="./assets/slider/v-iphone.png" alt="vertical iphone">
@@ -38,7 +41,7 @@
                 <img class="right-chev hoverable " src="./assets/slider/chev.png" alt="Right">
             </div>
             <div class="line"></div>
-            <div class="our_services">
+            <div class="our_services" id="services">
                 <div class="common">
                     <h2>Our Services</h2>
                     <p>
@@ -89,7 +92,7 @@
                   </div>
             </div>
             <div class="line"></div>
-            <div class="portfolio">
+            <div class="portfolio" id="portfolio">
                 <div class="common">
                     <h2>Portfolio</h2>
                     <p>
@@ -118,7 +121,7 @@
                 </div>
             </div>
             <div class="line"></div>
-            <div class="about_us">
+            <div class="about_us" id="about">
                 <div class="general">
                     <h2>About Us</h2>
                     <p>
@@ -167,7 +170,7 @@
                   </div>
             </div>
             <div class="line"></div>
-            <div class="get_a_quote">
+            <div class="get_a_quote" id="contact">
               <div class="info">
                 <h1>Get a Quote</h1>
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
