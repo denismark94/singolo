@@ -190,7 +190,7 @@ main > .our_services > .service {
   height: 7px;
   width: 300px;
   display: grid;
-  grid-template: 17px 70px / 60px 240px;
+  grid-template: 17px 113px / 60px 240px;
 }
 
 main > .our_services > .service > h2 {
@@ -215,6 +215,8 @@ main > .our_services > .service > p {
   text-align: justify;
   letter-spacing: -0.01px;
   line-height: 21.3px;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
     
 main > .our_services > .service > .icon {
@@ -237,6 +239,7 @@ main > .our_services > .service >  .third-column {
 
 main > .portfolio {
   background-color: #2d303a;
+  padding-bottom: 47px;
 }
 
 main > .portfolio > .common {
@@ -295,8 +298,7 @@ main > .portfolio > .arts {
   grid-template: repeat(3, 187px) / repeat(4, 220px);
   grid-auto-flow: dense;
   grid-auto-rows: 0;
-  overflow: hidden;
-  padding-bottom: 67px;
+  overflow-y: hidden;
 }
 
 main > .portfolio + .line {
@@ -348,6 +350,9 @@ main > .about_us > .authors > .author > h3 {
   margin-bottom: 7px;
   font-weight: 800;
   letter-spacing: -0.45px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: min-content;
 }
 
 main > .about_us > .authors > .author > p {
@@ -476,7 +481,7 @@ main > .get_a_quote > .quote_form > .input:focus {
 
 main > .get_a_quote > .quote_form > #submit:hover {
   cursor: pointer;
-  filter: drop-shadow(1px 1px 5px #666d89);
+  background-color: #c44740;
 }
 
 main > .get_a_quote > .quote_form > #submit:active {
@@ -533,7 +538,7 @@ main > .get_a_quote > .contacts > .contacts_block > .contacts_str {
   align-content: center;
 }
 
-main > .get_a_quote > .contacts > .contacts_block > .contacts_str > a {
+main > .get_a_quote > .contacts > .contacts_block > a {
   text-decoration: none;
   color: #f0d8d9;
   font-size: 9pt;
