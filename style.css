@@ -115,16 +115,29 @@ main > div {
 
 
 main > .slider {
-    height: 594px;
+    height: 566px;
+    padding-bottom: 28px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 10fr 1fr;
     background-color: #f06c64;
+    overflow-x: hidden;
 }
-  
+
+main > .slider > .arrow {
+  position: absolute;
+  align-self: center;
+  padding: 23px 42px 0px 15px;
+  z-index: 3;
+}
+
+
+main > .slider > .right-chev {
+  justify-self: end;
+  padding-right: 40px;
+}
+
 main > .slider > .left-chev {
-    margin-top: 281px;
-    margin-left: 42px;
-    transform: scale(-1, 1);
+  transform: scale(-1, 1);
 }
   
 main > .slider > .left-chev:hover {
@@ -135,43 +148,121 @@ main > .slider > .left-chev:active {
     transform: scale(-1.4, 1.4);
 }
 
-main > .slider > .iphone {
-    position: absolute;
-}
-  
-main > .slider > .v-iphone {
-    margin-top: 53px;
-    margin-left: 112px;
+main > .slider > .carousel {
+  position:relative;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 858px);
+  grid-auto-flow: column;
+  justify-content: space-between;
+  justify-items: center;
+  margin: 0;
+  grid-gap: 80px;
+  left: -858px;
 }
 
-main > .slider > .h-iphone {
-    margin-top: 174px;
-    margin-left: 425px;
+
+main > .slider > .carousel > .carousel-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 288px 577px;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+@keyframes slide-right {
+  from{left:-858px}
+  to{left:80px}  
+  /*left 7% - left*/
+  /*left -32% - center*/
+  /*left -52% - right*/
+}
+
+@keyframes slide-left {
+  from{left:-858px}
+  to{left: -1795px}  
+}
+
+.slide-right {
+  animation: slide-right 1s;
+}
+
+.slide-left {
+  animation: slide-left 1s;
+}
+
+main > .slider > .carousel > .iphone {
+  align-self: center;
+  justify-self: center;
+
+    /* position: absolute; */
+}
+  
+.v-iphone {
+  position:relative;
+    /* margin-top: 53px;
+    margin-left: 112px; */
+}
+
+.h-iphone {
+  transform: rotate(90deg);
+  margin-bottom: 3px;
+  position:relative;
+    /* margin-top: 174px;
+    margin-left: 425px; */
 }
   
 main > .slider > .iphone:hover {
-    filter: blur(1px);
+    /* filter: blur(1px); */
 }
 
 main > .slider > .iphone:active {
     transform: translateY(-3px);
 }
   
-main > .slider > .iphone > .iphone-src {
-    position: absolute;
+.iphone-src {
+    position: relative;
     z-index: 2;
   }
   
-main > .slider > .iphone >  .shadow {
+.shadow {
     position: absolute;
-    margin-left: 1px;
+    left: 0;
     opacity: 0.14901960784313725;
     z-index: 1;
   }
   
+.iphone-bg {
+  position: absolute;
+  z-index:3;
+}
+
+.v-iphone .iphone-bg {
+  top:65px;
+  left:15px;
+}
+
+.off {
+  display: none;
+}
+
+.h-iphone .iphone-bg {
+  transform: rotate(90deg);
+  top:138px;
+  left:-57px;
+}
+
+.h-iphone .shadow {
+  transform: rotate(90deg);
+  top: 96px;
+  left: -122px;
+}
+
 main > .slider > .right-chev {
-    margin-top: 281px;
-    margin-left: 454px;
+    /* margin-top: 281px;
+    margin-left: 454px; */
   }
   
 main > .slider > .right-chev:hover {
