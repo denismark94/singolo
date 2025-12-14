@@ -1,6 +1,7 @@
 let section = document.querySelectorAll("main > div");
 let sections = {};
 let i = 0;
+ARTS = document.querySelectorAll('.arts img');
 
 section.forEach(function(e) {
     sections[e.id] = e.offsetTop - 95;
@@ -33,6 +34,21 @@ const set_listeners = () => {
     });
   });
 };
+prev = null;
+ARTS.forEach((art)=>{
+  art.addEventListener('click', (event)=>{
+    if (event.target.classList.contains('active')) 
+      event.target.classList.remove('active');  
+    else {
+      event.target.classList.add('active');
+      if(prev) prev.classList.remove('active');
+      prev = event.target;
+    }
+    /*if(prev) prev.classList.remove('active');    
+    prev = null;
+    */
+  })
+})
 
 set_listeners();
 
@@ -86,4 +102,68 @@ const upd_right = () => {
   set_listeners();
 }
 
+function shuffle(arts){
+  return new Promise((resolve)=>{
+    children = Array.from(arts.children);
+    arts.innerHTML = '';
+    for(let i = 0; i < children.length; i++){  
+      do {j = Math.floor(Math.random() * children.length);
+      } while (i == j);
+      tmp = children[i];
+      children[i] = children[j];
+      children[j] = tmp;
+    }
+    children.forEach(child => {
+      arts.appendChild(child);
+    });
+    resolve();
+  });
+}
+counter = 0;
+function hide_tiles(event) {
+  return new Promise((resolve)=>{
+    switch(event.animationName){
+      case 'fade-out':
+          event.target.classList.remove('fade-out');
+          event.target.classList.add('invisible');  
+          counter++;
+          if (counter == ARTS.length)
+          {
+            counter = 0;
+            resolve();
+          }
+          break;
+      case 'fade-in':
+        event.target.classList.remove('fade-in');
+        break;
+    };
+  });
+}
 
+function show_tiles(arts) {
+  arts.forEach((art)=>{
+    art.classList.remove("invisible");
+    art.classList.add('fade-in');
+  }) 
+}
+
+
+function set_tiles_listeners(arts){
+  arts.forEach((art)=>{
+    art.onanimationend = ((event)=>hide_tiles(event)
+    .then(()=>shuffle(document.querySelector('.arts')))
+    .then(()=>show_tiles(ARTS)));
+  });
+}
+
+
+set_tiles_listeners(ARTS);
+const TABS = document.querySelectorAll('.portfolio .common a')
+TABS.forEach((button) => {
+  button.addEventListener('click',(event)=>{
+    TABS.forEach((tab)=>tab.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+    ARTS.forEach((art)=>{art.classList.add("fade-out");});
+    hide_tiles(ARTS);
+  })
+});

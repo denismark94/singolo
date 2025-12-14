@@ -193,6 +193,28 @@ main > .slider > .carousel > .carousel-item {
   animation: slide-left 1s;
 }
 
+@keyframes fade-in {
+  from{opacity: 0}
+  to{opacity: 1;}
+}
+
+@keyframes fade-out {
+  from{opacity: 1}
+  to{opacity: 0;}
+}
+
+.fade-in {
+  animation: fade-in 1s;
+}
+
+.fade-out {
+  animation: fade-out 1s;
+}
+
+.invisible {
+  opacity: 0;
+}
+
 main > .slider > .carousel > .iphone {
   align-self: center;
   justify-self: center;
@@ -416,6 +438,10 @@ main > .portfolio > .common  > nav > .clickable:active {
   transform: scale(1.1, 1.1);
 }
 
+main > .portfolio > .common  > nav > .active {
+  color: #E8D4A5;
+}
+
 main > .portfolio > .arts {
   margin-top: 18px;
   margin-left: 40px;
@@ -425,6 +451,13 @@ main > .portfolio > .arts {
   grid-auto-flow: dense;
   grid-auto-rows: 0;
   overflow-y: hidden;
+  cursor:pointer;
+}
+
+main > .portfolio > .arts > .active {
+    outline: 5px solid #F06C64;
+    outline-offset: -5px;
+
 }
 
 main > .portfolio + .line {
