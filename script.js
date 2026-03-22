@@ -3,6 +3,7 @@ let sections = {};
 let i = 0;
 ARTS = document.querySelectorAll('.arts img');
 
+let form  = document.querySelector(".quote_form");
 section.forEach(function(e) {
     sections[e.id] = e.offsetTop - 95;
   });
@@ -44,10 +45,18 @@ ARTS.forEach((art)=>{
       if(prev) prev.classList.remove('active');
       prev = event.target;
     }
-    /*if(prev) prev.classList.remove('active');    
-    prev = null;
-    */
   })
+})
+
+form.addEventListener('submit',(event)=>{
+  event.preventDefault();
+  let subject = event.target.querySelector("#subject");
+  let describe = event.target.querySelector("#data");
+  let popup_subject = "Без темы";
+  let popup_describe = "Без опписания";
+  if (subject.value) popup_subject = "Тема: " + subject.value;
+  if (describe.value) popup_describe = "Описание: " + subject.value.substr(10);
+  alert("Sent\n"+popup_subject + "\n" + popup_describe + "\nOK");
 })
 
 set_listeners();
@@ -167,3 +176,4 @@ TABS.forEach((button) => {
     hide_tiles(ARTS);
   })
 });
+

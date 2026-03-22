@@ -756,3 +756,19 @@ footer > .social > .icon {
 footer > .social > .icon:hover{
     filter: drop-shadow(2px 2px 1px #666d89);
 }  
+
+.popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.inactive {
+  display: none;
+}
