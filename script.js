@@ -1,26 +1,24 @@
-let section = document.querySelectorAll("main > div");
-let sections = {};
-let i = 0;
-ARTS = document.querySelectorAll('.arts img');
+//Navigation bar handling
+let sections = document.querySelectorAll("main > div");
+let section_positions = {};
 
-let form  = document.querySelector(".quote_form");
-section.forEach(function(e) {
-    sections[e.id] = e.offsetTop - 95;
-  });
+sections.forEach(function(e) {
+    section_positions[e.id] = e.offsetTop - 95;
+});
 
-  window.onscroll = function() {
-    let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-
-    for (i in sections) {
-      if (sections[i] <= scrollPosition) {
-        document.querySelectorAll('.menuitem').forEach(function(x){
-            x.classList.remove('active')
-        });
-        document.querySelector('a[href*=' + i + ']').classList.add('active');
-      }
+window.onscroll = function() {
+  let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+  for (i in section_positions) {
+    if (section_positions[i] <= scrollPosition) {
+      document.querySelectorAll('.menuitem').forEach(function(x){
+        x.classList.remove('active')
+      });
+      document.querySelector('a[href*=' + i + ']').classList.add('active');
     }
-  };
+  }
+};
 
+//Phone carousel handling
 const CAROUSEL = document.querySelector(".carousel");
 const LEFTARROW = document.querySelector(".left-chev");
 const RIGHTARROW = document.querySelector(".right-chev");
@@ -28,45 +26,11 @@ const CAROUSEL_LEFT = document.querySelector(".carousel-left");
 const CAROUSEL_CENTER = document.querySelector(".carousel-center");
 const CAROUSEL_RIGHT = document.querySelector(".carousel-right");
 
-const set_listeners = () => {
-  document.querySelectorAll(".iphone").forEach((phone)=>{
-    phone.addEventListener('click', (event)=>{
-      event.currentTarget.querySelector('.iphone-bg').classList.toggle('off');
-    });
-  });
-};
-prev = null;
-ARTS.forEach((art)=>{
-  art.addEventListener('click', (event)=>{
-    if (event.target.classList.contains('active')) 
-      event.target.classList.remove('active');  
-    else {
-      event.target.classList.add('active');
-      if(prev) prev.classList.remove('active');
-      prev = event.target;
-    }
-  })
-})
-
-form.addEventListener('submit',(event)=>{
-  event.preventDefault();
-  let subject = event.target.querySelector("#subject");
-  let describe = event.target.querySelector("#data");
-  let popup_subject = "Без темы";
-  let popup_describe = "Без опписания";
-  if (subject.value) popup_subject = "Тема: " + subject.value;
-  if (describe.value) popup_describe = "Описание: " + subject.value.substr(10);
-  alert("Sent\n"+popup_subject + "\n" + popup_describe + "\nOK");
-})
-
-set_listeners();
-
 const moveLeft = () => {
   CAROUSEL.classList.add("slide-left");
   LEFTARROW.removeEventListener("click", moveLeft);
   RIGHTARROW.removeEventListener("click", moveRight);
 };
-
 const moveRight = () => {
   CAROUSEL.classList.add('slide-right');
   LEFTARROW.removeEventListener("click", moveLeft);
@@ -76,6 +40,13 @@ const moveRight = () => {
 LEFTARROW.addEventListener("click", moveLeft);
 RIGHTARROW.addEventListener("click", moveRight);
 
+const set_phone_listeners = () => {
+  document.querySelectorAll(".iphone").forEach((phone)=>{
+    phone.addEventListener('click', (event)=>{
+      event.currentTarget.querySelector('.iphone-bg').classList.toggle('off');
+    });
+  });
+};
 
 CAROUSEL.onanimationend = (event) => {
   switch(event.animationName) {
@@ -100,7 +71,7 @@ const upd_left = () => {
   CAROUSEL_LEFT.innerHTML = CAROUSEL_CENTER.innerHTML;
   CAROUSEL_CENTER.innerHTML = CAROUSEL_RIGHT.innerHTML;
   CAROUSEL_RIGHT.innerHTML = left_html; 
-  set_listeners(); 
+  set_phone_listeners(); 
 }
 
 const upd_right = () => {
@@ -108,8 +79,24 @@ const upd_right = () => {
   CAROUSEL_CENTER.innerHTML = CAROUSEL_LEFT.innerHTML;
   CAROUSEL_LEFT.innerHTML = CAROUSEL_RIGHT.innerHTML;
   CAROUSEL_RIGHT.innerHTML = center_html;
-  set_listeners();
+  set_phone_listeners();
 }
+set_phone_listeners();
+
+prev = null;
+ARTS = document.querySelectorAll('.arts img');
+ARTS.forEach((art)=>{
+  art.addEventListener('click', (event)=>{
+    if (event.target.classList.contains('active')) 
+      event.target.classList.remove('active');  
+    else {
+      event.target.classList.add('active');
+      if(prev) prev.classList.remove('active');
+      prev = event.target;
+    }
+  })
+})
+
 
 function shuffle(arts){
   return new Promise((resolve)=>{
@@ -176,4 +163,45 @@ TABS.forEach((button) => {
     hide_tiles(ARTS);
   })
 });
+
+
+let form  = document.querySelector(".quote_form");
+form.addEventListener('submit',(event)=>{
+  event.preventDefault();
+  let form_subject = event.target.querySelector("#subject");
+  let form_description = event.target.querySelector("#data");
+  let popup_subject = "No subject";
+  let popup_description = "No desription";
+  if (form_subject.value) popup_subject = "Subject: " + form_subject.value;
+  if (form_description.value) popup_description = "Description: " + form_description.value.substr(10);
+  
+  let popup_subject_field = document.querySelector('.popup #subject');
+  let popup_description_field = document.querySelector('.popup #description');
+  popup_subject_field.textContent = popup_subject;
+  popup_description_field.textContent = popup_description;
+  toggle_popup();
+})
+
+let toggle_popup = (e)=>{
+  let background = document.querySelector(".background");
+  let btn = document.querySelector(".popup_button");
+  if (e)
+  {
+    e.stopPropagation();
+    if (!e || e.target == btn || e.target == background)
+      background.classList.toggle('active');
+  }
+  else
+    background.classList.toggle('active');
+}
+
+document.querySelector('.background').addEventListener("click", (event)=>toggle_popup(event));
+document.querySelector('.popup_button').addEventListener("click", (event)=>toggle_popup(event));
+
+
+
+
+
+
+
 
