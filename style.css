@@ -797,6 +797,6 @@ footer > .social > .icon:hover{
 }
 
 
-.active {
+.background.active {
   display: block;
 }

@@ -173,8 +173,7 @@ form.addEventListener('submit',(event)=>{
   let popup_subject = "No subject";
   let popup_description = "No desription";
   if (form_subject.value) popup_subject = "Subject: " + form_subject.value;
-  if (form_description.value) popup_description = "Description: " + form_description.value.substr(10);
-  
+  if (form_description.value) popup_description = "Description: " + form_description.value.substr(0,10);
   let popup_subject_field = document.querySelector('.popup #subject');
   let popup_description_field = document.querySelector('.popup #description');
   popup_subject_field.textContent = popup_subject;
@@ -188,7 +187,8 @@ let toggle_popup = (e)=>{
   if (e)
   {
     e.stopPropagation();
-    if (!e || e.target == btn || e.target == background)
+    clear_forms();
+    if (e.target == btn || e.target == background)
       background.classList.toggle('active');
   }
   else
@@ -199,7 +199,12 @@ document.querySelector('.background').addEventListener("click", (event)=>toggle_
 document.querySelector('.popup_button').addEventListener("click", (event)=>toggle_popup(event));
 
 
-
+let clear_forms = ()=>{
+  document.querySelector('#name').value = '';
+  document.querySelector("#email").value = '';
+  document.querySelector("#subject").value = '';
+  document.querySelector("#data").value = '';
+}
 
 
 
